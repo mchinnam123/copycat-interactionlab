@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+
+<html>
+
+<body>
+ <style>
+
+    .container{
+        background-color: rgb(249, 227, 202);
+        width: 600px;
+        height: 700px;
+        display: grid;
+        grid-template-rows: 200px 200px 200px;
+        grid-template-columns: 200px 200px 200px;
+    }
+
+    .body{
+        width: 210px;
+        height: 200px;
+        grid-row: 2/4;
+        grid-column: 2/4;
+        background-color:rgb(246, 206, 59);
+        border-radius: 50px;       
+        z-index: 1;
+        
+    }
+    
+    .round-head{
+        width: 210px;
+        height: 100px;
+        grid-row: 2/4;
+        grid-column: 2/4;
+        background-color:rgb(246, 206, 59);
+        border-radius: 90px 90px 0 0; 
+        transform: translateY(-40px);  
+        z-index: 2;
+       
+    }
+    .left-eye{
+        width: 110px;
+        height: 110px;
+        grid-row: 1/3;
+        grid-column: 1/2;
+        background-color: white;
+        border-radius: 100px;
+        z-index: 3;
+        transform: translateY(-130px) translateX(5px);
+        
+    }
+    .left-eye-border{
+        background-color: transparent;
+        border: 15px solid black;
+        width: 80px;
+        height: 80px;
+        border-radius: 100px;
+    }
+
+    .left-pupil{
+        width: 35px;
+        height: 35px;
+        grid-row: 1/3;
+        grid-column: 1/2;
+        transform: translateY(-60px) translateX(24px);
+        background-color: black;
+        border-radius: 100px;
+    }
+
+    .right-eye{
+        width: 110px;
+        height: 110px;
+        grid-row: 1/3;
+        grid-column: 1/2;
+        background-color: white;
+        border-radius: 100px;
+        z-index: 3;
+        transform: translateY(-240px) translateX(100px);
+        
+    }
+    .right-eye-border{
+        background-color: transparent;
+        border: 15px solid black;
+        width: 80px;
+        height: 80px;
+        border-radius: 100px;
+    }
+
+    .right-pupil{
+        width: 35px;
+        height: 35px;
+        grid-row: 1/3;
+        grid-column: 1/2;
+        transform: translateY(-60px) translateX(24px);
+        background-color: black;
+        border-radius: 100px;
+    }
+
+    .smile{
+        grid-row: 1/3;
+        grid-column: 1/2;
+        border: 7px solid black;
+        width: 70px;
+        height: 100px;
+        border-color: #000 transparent transparent transparent;
+        border-radius: 70% / 60px 60px 0 0;
+        transform: translateY(-325px) translateX(60px) rotateX(180deg);
+    }
+
+    .overalls{
+        grid-row: 1/3;
+        grid-column: 1/3;
+        width: 160px;
+        height: 90px;
+        transform: translateY(-310px) translateX(25px);
+        background-color: rgb(54, 82, 147);
+    }
+
+    .overalls-bottom{
+        grid-row: 1/3;
+        grid-column: 1/3;
+        width: 210px;
+        height: 70px;
+        border-radius:  0 0  90px 90px; 
+        background-color: rgb(54, 82, 147);
+        transform: translateY(40px) translateX(-25px);
+    }
+    
+    .overalls-right-strap{
+        grid-row: 1/3;
+        grid-column: 1/3;
+        width: 20px;
+        height: 55px;
+        background-color: rgb(54, 82, 147);
+        transform: translateY(-100px) translateX(-10px) rotate(-65deg);
+        z-index: 5;
+    }
+
+    .overalls-left-strap{
+        grid-row: 1/3;
+        grid-column: 1/3;
+        width: 20px;
+        height: 55px;
+        background-color: rgb(54, 82, 147);
+        transform: translateY(-150px) translateX(150px) rotate(65deg);
+        z-index: 5;
+    }
+    
+    .overalls-pocket{
+        grid-row: 1/3;
+        grid-column: 1/3;
+        width: 60px;
+        height: 30px;
+        transform: translateY(-160px) translateX(43px);
+        background-color: transparent;
+        border: 7px solid rgb(27, 45, 87);
+        border-radius:  0 0 20px 20px; 
+        z-index: 7;
+    }
+
+    .right-leg{
+        grid-row: 1/3;
+        grid-column: 1/4;
+        width: 40px;
+        height: 40px;
+        background-color: rgb(54, 82, 147);
+        transform: translateY(-300px) translateX(110px);
+    }
+
+    .right-leg-shoe{
+        grid-row: 1/3;
+        grid-column: 1/4;
+        width: 70px;
+        height: 25px;
+        background-color: rgb(0, 0, 0);
+        transform: translateY(25px);
+        border-radius:  0 20px 0 0; 
+    }
+
+    .left-leg{
+        grid-row: 1/3;
+        grid-column: 1/4;
+        width: 40px;
+        height: 40px;
+        background-color: rgb(54, 82, 147);
+        transform: translateY(-340px) translateX(60px);
+    }
+
+    .left-leg-shoe{
+        grid-row: 1/3;
+        grid-column: 1/3;
+        width: 70px;
+        height: 25px;
+        background-color: rgb(0, 0, 0);
+        transform: translateY(-355px) translateX(30px) rotateY(180deg);
+        border-radius:  0 20px 0 0; 
+    }
+
+    .right-arm{
+        grid-row: 1/-1;
+        grid-column: 1/-1;
+        width: 20px;
+        height: 95px;
+        background-color: rgb(246, 206, 59);
+        transform: translateY(-505px) translateX(218px) rotate(-30deg);
+    }
+
+    .right-hand-1{
+        grid-row: 1/-1;
+        grid-column: 1/-1;
+        width: 28px;
+        height: 30px;
+        background-color: black;
+        transform: translateY(80px) translateX(-5px);
+    }
+
+    .right-hand-2{
+        grid-row: 1/-1;
+        grid-column: 1/-1;
+        width: 40px;
+        height: 25px;
+        background-color: black;
+        transform: translateY(70px) translateX(-17px);
+        border-radius:  10px 0 10px 10px; 
+    }
+
+
+    .left-arm{
+        grid-row: 1/-1;
+        grid-column: 1/-1;
+        width: 20px;
+        height: 95px;
+        background-color: rgb(246, 206, 59);
+        transform: translateY(-606px) translateX(-28px) rotate(40deg);
+    }
+
+    .left-hand{
+        grid-row: 1/-1;
+        grid-column: 1/-1;
+        width: 35px;
+        height: 38px;
+        background-color: black;
+        transform: translateY(70px) translateX(-5px);
+        border-radius: 15px;
+        z-index: 100;
+    }
+
+    .teddy{
+        width: 60px;
+        height: 55px;
+        background-color: rgb(98, 60, 33);
+        transform: translateY(-710px) translateX(-80px) rotate(-45deg);
+        border-radius: 30px;
+    }
+
+    .teddy-body{
+        width: 55px;
+        height: 65px;
+        background-color: rgb(98, 60, 33);
+        transform: translateY(40px) translateX(0px) rotate(-5deg);
+        border-radius: 30px;
+        z-index: -100;
+    }
+
+    .teddy-ear-right{
+        width: 25px;
+        height: 25px;
+        background-color: rgb(98, 60, 33);
+        transform: translateY(-70px) translateX(-5px) rotate(150deg);
+        border-radius: 15px;
+        z-index: -100;
+    }
+
+     .teddy-ear-left{
+        width: 25px;
+        height: 25px;
+        background-color: rgb(98, 60, 33);
+        transform: translateY(-85px) translateX(45px) rotate(140deg);
+        border-radius: 15px;
+        z-index: -100;
+    }
+
+    .teddy-arm{
+        width: 25px;
+        height: 35px;
+        background-color: rgb(98, 60, 33);
+        transform: translateY(-80px) translateX(-15px) rotate(110deg);
+        border-radius: 15px;
+        z-index: -100;
+    }
+
+    .teddy-leg-right{
+        width: 30px;
+        height: 35px;
+        background-color: rgb(98, 60, 33);
+        transform: translateY(-70px) translateX(-10px) rotate(40deg);
+        border-radius: 15px;
+        z-index: -100;
+    }
+
+    .teddy-leg-left{
+        width: 30px;
+        height: 35px;
+        background-color: rgb(98, 60, 33);
+        transform: translateY(-95px) translateX(18px) rotate(20deg);
+        border-radius: 15px;
+        z-index: -100;
+    }
+
+    .teddy-eye-right{
+         width: 10px;
+        height: 10px;
+        border-radius: 15px;
+        background-color: rgb(0, 0, 0);
+         transform: translateY(-205px) translateX(18px);
+    }
+ 
+    .teddy-eye-left{
+        width: 10px;
+        height: 10px;
+        border-radius: 15px;
+        background-color: rgb(0, 0, 0);
+        transform: translateY(-210px) translateX(40px);
+    }
+
+     .teddy-nose{
+        width: 12px;
+        height: 12px;
+        border-radius: 15px;
+        background-color: rgb(0, 0, 0);
+        transform: translateY(-210px) translateX(30px);
+    }
+
+    .teddy-mouth{
+         width: 8px;
+        height: 10px;
+        border-radius:  2px 0px 0px 2px; 
+        background-color: rgb(247, 99, 99);
+        transform: translateY(-215px) translateX(20px) rotate(-30deg);
+
+    }
+    
+
+
+
+
+
+
+
+</style>
+
+
+<div class = "container">
+<div class = "body">
+
+    <div class = "round-head"></div>
+
+     <div class = "left-eye">
+        <div class = "left-eye-border"></div>
+        <div class = "left-pupil"></div>
+     </div>
+
+     <div class = "right-eye">
+        <div class = "right-eye-border"></div>
+        <div class = "right-pupil"></div>
+     </div>
+
+     <div class = "smile"></div>
+
+     <div class = "overalls">
+        <div class = "overalls-bottom"></div>
+        <div class = "overalls-right-strap"></div>
+        <div class = "overalls-left-strap"></div>
+        <div class = "overalls-pocket"></div>
+     </div>
+
+     <div class = "right-leg">
+        <div class = "right-leg-shoe"></div>
+     </div>
+
+     <div class = "left-leg"></div>
+     <div class = "left-leg-shoe"></div>
+
+     <div class = "right-arm">
+        <div class = "right-hand-1"></div>
+        <div class = "right-hand-2"></div>
+     </div>
+
+     <div class = "left-arm">
+        <div class = "left-hand"></div>
+     </div>
+
+     <div class = "teddy">
+        <div class = "teddy-body"></div>
+        <div class = "teddy-ear-right"></div>
+        <div class = "teddy-ear-left"></div>
+        <div class = "teddy-arm"></div>
+        <div class = "teddy-leg-right"></div>
+        <div class = "teddy-leg-left"></div>
+        <div class = "teddy-eye-right"></div>
+        <div class = "teddy-eye-left"></div>
+        <div class = "teddy-nose"></div>
+        <div class = "teddy-mouth"></div>
+     </div>
+
+
+
+</div>
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+</body>
+
+</html>
+
